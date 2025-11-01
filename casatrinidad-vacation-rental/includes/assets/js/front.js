@@ -509,9 +509,5 @@
         }
     }
 
-    if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', renderApp);
-    } else {
-        renderApp();
-    }
+    document.addEventListener('DOMContentLoaded', renderApp);
 })(window.wp);

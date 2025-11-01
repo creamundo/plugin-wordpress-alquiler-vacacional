@@ -665,17 +665,11 @@
         }
     }
 
-    function boot() {
+    document.addEventListener('DOMContentLoaded', () => {
         renderApp('ctvr-dashboard-app', DashboardApp);
         renderApp('ctvr-availability-app', AvailabilityApp);
         renderApp('ctvr-requests-app', RequestsApp);
         renderApp('ctvr-reservations-app', ReservationsApp);
         renderApp('ctvr-checklist-app', ChecklistApp);
-    }
-
-    if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', boot);
-    } else {
-        boot();
-    }
+    });
 })(window.wp);
