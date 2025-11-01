@@ -1,0 +1,349 @@
+.ctvr-calendar-wrapper {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    max-width: 960px;
+    margin: 2rem auto;
+    color: #1f2933;
+}
+
+.ctvr-card {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(31, 41, 51, 0.12);
+    padding: 2rem;
+}
+
+.ctvr-calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.ctvr-month-label {
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+
+.ctvr-nav-buttons {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.ctvr-nav-button {
+    background: #f0f4f8;
+    border: none;
+    border-radius: 8px;
+    padding: 0.5rem 0.75rem;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.ctvr-nav-button:hover:not(:disabled) {
+    background: #d9e2ec;
+    transform: translateY(-1px);
+}
+
+.ctvr-nav-button:disabled {
+    cursor: not-allowed;
+    opacity: 0.4;
+}
+
+.ctvr-weekdays {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    text-align: center;
+    font-weight: 600;
+    color: #52606d;
+    margin-bottom: 0.5rem;
+}
+
+.ctvr-calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 0.4rem;
+}
+
+.ctvr-day {
+    position: relative;
+    min-height: 80px;
+    border-radius: 10px;
+    padding: 0.4rem;
+    text-align: left;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.ctvr-day:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px rgba(15, 23, 42, 0.12);
+}
+
+.ctvr-day.empty {
+    visibility: hidden;
+}
+
+.ctvr-day-number {
+    font-weight: 700;
+    font-size: 0.95rem;
+}
+
+.ctvr-day-price {
+    position: absolute;
+    bottom: 0.4rem;
+    right: 0.6rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.ctvr-day-available {
+    background: linear-gradient(135deg, #d3f9d8, #b6f2c8);
+}
+
+.ctvr-day-blocked {
+    background: linear-gradient(135deg, #ffcdd2, #ef9a9a);
+    cursor: not-allowed;
+}
+
+.ctvr-day-unpriced {
+    background: linear-gradient(135deg, #e2e8f0, #cbd5e1);
+    cursor: not-allowed;
+}
+
+.ctvr-day-selected {
+    border: 2px solid #2563eb;
+    background: linear-gradient(135deg, #bfdbfe, #93c5fd);
+}
+
+.ctvr-day-range {
+    border: 2px solid rgba(37, 99, 235, 0.5);
+    background: linear-gradient(135deg, #dbeafe, #bfdbfe);
+}
+
+.ctvr-legend {
+    display: flex;
+    gap: 1rem;
+    margin: 1.5rem 0;
+    flex-wrap: wrap;
+}
+
+.ctvr-toolbar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin: 1rem 0;
+}
+
+.ctvr-toolbar-button {
+    background: #e2e8f0;
+    border: none;
+    border-radius: 8px;
+    padding: 0.5rem 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.ctvr-toolbar-button:hover {
+    background: #cbd5e1;
+}
+
+.ctvr-tab-active {
+    background: linear-gradient(135deg, #2563eb, #1d4ed8);
+    color: #fff;
+}
+
+.ctvr-inline-button {
+    background: transparent;
+    border: none;
+    color: #dc2626;
+    font-weight: 600;
+    cursor: pointer;
+    padding: 0.4rem 0;
+}
+
+.ctvr-inline-button:hover {
+    text-decoration: underline;
+}
+
+.ctvr-legend-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.4rem 0.8rem;
+    border-radius: 8px;
+    font-size: 0.9rem;
+}
+
+.ctvr-total {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.ctvr-tooltip {
+    margin: 1rem 0;
+    padding: 0.8rem 1rem;
+    background: #dbeafe;
+    border-left: 4px solid #1d4ed8;
+    border-radius: 8px;
+    color: #1e3a8a;
+    font-weight: 500;
+}
+
+.ctvr-popin {
+    position: fixed;
+    inset: 0;
+    background: rgba(15, 23, 42, 0.45);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+
+.ctvr-popin-content {
+    background: #fff;
+    border-radius: 12px;
+    max-width: 420px;
+    padding: 2rem;
+    position: relative;
+    text-align: center;
+    box-shadow: 0 20px 40px rgba(15, 23, 42, 0.25);
+}
+
+.ctvr-popin-close {
+    position: absolute;
+    top: 0.6rem;
+    right: 0.8rem;
+    background: transparent;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.ctvr-form {
+    border-top: 1px solid #e2e8f0;
+    padding-top: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.ctvr-form-info {
+    background: #f1f5f9;
+    padding: 0.8rem 1rem;
+    border-radius: 8px;
+    color: #1f2937;
+    margin-bottom: 1rem;
+}
+
+.ctvr-form-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
+}
+
+.ctvr-field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.ctvr-field label {
+    font-weight: 600;
+    color: #1f2937;
+}
+
+.ctvr-field input,
+.ctvr-field select,
+.ctvr-field textarea {
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    padding: 0.6rem 0.7rem;
+    font-size: 1rem;
+    transition: border 0.2s ease, box-shadow 0.2s ease;
+}
+
+.ctvr-field input:focus,
+.ctvr-field select:focus,
+.ctvr-field textarea:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+    outline: none;
+}
+
+.ctvr-field-full {
+    grid-column: 1 / -1;
+}
+
+.ctvr-field.ctvr-checkbox label {
+    flex-direction: row;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 500;
+}
+
+.ctvr-age-fields {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.ctvr-summary {
+    background: #f8fafc;
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    display: grid;
+    gap: 0.5rem;
+}
+
+.ctvr-alert {
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    font-weight: 500;
+}
+
+.ctvr-alert-error {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+.ctvr-alert-success {
+    background: #dcfce7;
+    color: #166534;
+}
+
+.ctvr-submit {
+    background: linear-gradient(135deg, #2563eb, #1d4ed8);
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    padding: 0.9rem 2rem;
+    font-size: 1.05rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.ctvr-submit:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 10px 22px rgba(29, 78, 216, 0.25);
+}
+
+@media (max-width: 768px) {
+    .ctvr-calendar-grid {
+        gap: 0.25rem;
+    }
+
+    .ctvr-day {
+        min-height: 70px;
+        padding: 0.3rem;
+    }
+
+    .ctvr-card {
+        padding: 1.5rem;
+    }
+}
