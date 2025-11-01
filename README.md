@@ -1,0 +1,1 @@
+# plugin-wordpress-alquiler-vacacional
